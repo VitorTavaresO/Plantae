@@ -39,8 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
               colors: [Color.fromRGBO(0,173, 132, 1),  Color.fromRGBO(0,173, 132, 1), Color.fromRGBO(0,173, 132, 1),  Color.fromRGBO(28,199,0,1),  Color.fromRGBO(28,199,0,1),  Color.fromRGBO(28,199,0,1), Color.fromRGBO(24,174,0,1),  Color.fromRGBO(24,174,0,1), Color.fromRGBO(24,174,0,1)]),),
       child: Scaffold(
           // By defaut, Scaffold background is white
