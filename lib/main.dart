@@ -7,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,19 +40,37 @@ class _MyHomePageState extends State<MyHomePage> {
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Color.fromRGBO(0,173, 132, 1),  Color.fromRGBO(0,173, 132, 1), Color.fromRGBO(0,173, 132, 1),  Color.fromRGBO(28,199,0,1),  Color.fromRGBO(28,199,0,1),  Color.fromRGBO(28,199,0,1), Color.fromRGBO(24,174,0,1),  Color.fromRGBO(24,174,0,1), Color.fromRGBO(24,174,0,1)]),),
+
+              colors: [Color.fromRGBO(0,173, 132, 1), 
+              Color.fromRGBO(0,173, 132, 1),
+              Color.fromRGBO(0,173, 132, 1),  
+              Color.fromRGBO(28,199,0,1),   
+              Color.fromRGBO(24,174,0,1),  
+              Color.fromRGBO(24,174,0,1)]),
+
       child: Scaffold(
-          // By defaut, Scaffold background is white
-          // Set its value to transparent
           backgroundColor: Colors.transparent,
-          body: Center(
+          body: Column (
+             mainAxisAlignment : MainAxisAlignment.center,
+            children: [
+              Align(
+            alignment: Alignment.bottomCenter,  
             child: Image.asset(
-              'assets/images/PlantaE_Logo(g).png',
+              'assets/images/PlantaE_Logo(w).png',
               height: 200,
               width: 200,
+              ), 
             ),
+             const Text(
+            'PLANTAE', 
+            style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: Colors.white, ), 
             ),
-          )
+            ],
+             ), 
+          ),
     );
   }
 }
