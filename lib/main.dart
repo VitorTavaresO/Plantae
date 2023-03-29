@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 200,
               ), 
             ),
-             Text(
+             const Text(
             'PLANTAE', 
             style: TextStyle(
             fontSize: 30,
