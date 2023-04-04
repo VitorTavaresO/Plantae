@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -67,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.white,
               ),
             ),
-          ], //Teste
+          ],
         ),
       ),
     );
