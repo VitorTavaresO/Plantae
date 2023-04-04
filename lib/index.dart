@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class indexScreen extends StatefulWidget {
-  const indexScreen({super.key, required this.title});
+class IndexScreen extends StatefulWidget {
+  const IndexScreen({super.key, required this.title});
 
 
   final String title;
 
   @override
-  State<indexScreen> createState() => _indexScreen();
+  State<IndexScreen> createState() => _IndexScreen();
 }
 
-class _indexScreen extends State<indexScreen> {
+class _IndexScreen extends State<IndexScreen> {
 
   @override
   Widget build(BuildContext context) {
