@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'loadscreen.dart';
 import 'index.dart';
 
 void main() {
@@ -13,10 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Plantae',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const IndexScreen(title: 'Plantae'),
+      theme: ThemeData(primarySwatch: Colors.green),
+      home: Index(),
     );
   }
 }
