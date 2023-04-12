@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -8,3 +9,5 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreen extends State<Register
+
+*/

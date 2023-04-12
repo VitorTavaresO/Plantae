@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Index extends StatefulWidget {
+  const Index({super.key});
+
   @override
   State<Index> createState() {
     return IndexState();
@@ -44,52 +46,46 @@ class IndexState extends State<Index> {
                 ),
               ),
             ),
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 100),
                   child: ElevatedButton(
-                    onPressed: null,
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white, 
+                      foregroundColor: Colors.black,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 50, vertical: 20),
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.white,
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
                         ),
                       ),
                     ),
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        color: Colors.black87,
-                      ),
-                    ),
+                    child: const Text('Login'),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 100),
                   child: ElevatedButton(
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white, 
+                      foregroundColor: Colors.black,
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      foregroundColor: Colors.black87,
+                        horizontal: 50, vertical: 20),
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
                         ),
                       ),
                     ),
-                    onPressed: null,
-                    child: const Text(
-                      'Register',
-                      style: TextStyle(
-                        color: Colors.black87,
-                      ),
-                    ),
+                    child: const Text('Register'),
+                    
+                    
                   ),
                 ),
               ],
