@@ -65,7 +65,7 @@ class IndexState extends State<Index> {
                         ),
                       ),
                     ),
-                    child: const Text('Login'),
+                    child: const Text('LOG IN'),
                   ),
                 ),
                 Padding(
@@ -73,8 +73,8 @@ class IndexState extends State<Index> {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white, 
-                      foregroundColor: Colors.black,
+                      backgroundColor: Colors.black, 
+                      foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(
                         horizontal: 50, vertical: 20),
                       shape: const RoundedRectangleBorder(
@@ -83,7 +83,7 @@ class IndexState extends State<Index> {
                         ),
                       ),
                     ),
-                    child: const Text('Register'),
+                    child: const Text('REGISTER'),
                     
                     
                   ),
