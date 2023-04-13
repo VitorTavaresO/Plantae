@@ -54,10 +54,9 @@ class IndexState extends State<Index> {
                   padding: const EdgeInsets.only(top: 100),
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const LoginScreen()),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LoginScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -80,13 +79,12 @@ class IndexState extends State<Index> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const RegisterScreen()),
+                        MaterialPageRoute(builder: (context) => const RegisterScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.white, 
+                      foregroundColor: Colors.black,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 50, vertical: 20),
                       shape: const RoundedRectangleBorder(
