@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Plantae',
       theme: ThemeData(primarySwatch: Colors.green),
-      home: Index(), //Para testar cada tela, troque o valor de home para a o nome da tela desejada
+      home: RegisterScreen(), //Para testar cada tela, troque o valor de home para a o nome da tela desejada
     );
   }
 }
