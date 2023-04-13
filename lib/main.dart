@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plantae/loginScreen.dart';
 import 'package:plantae/registerScreen.dart';
-import 'loadscreen.dart';
+import 'package:plantae/loadScreen.dart';
+import 'package:plantae/placesListScreen.dart';
 import 'index.dart';
 
 void main() {
@@ -14,11 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
       debugShowCheckedModeBanner: false,
       title: 'Plantae',
-      theme: ThemeData(primarySwatch: Colors.green),
-      home: Index(), //Para testar cada tela, troque o valor de home para a o nome da tela desejada
+      theme: ThemeData(primarySwatch: Colors.brown),
+      home: Index(),
     );
   }
 }

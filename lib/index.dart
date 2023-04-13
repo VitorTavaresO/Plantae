@@ -48,7 +48,6 @@ class IndexState extends State<Index> {
                 ),
               ),
             ),
-            
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -56,13 +55,20 @@ class IndexState extends State<Index> {
                   padding: const EdgeInsets.only(top: 100),
                   child: ElevatedButton(
                     onPressed: () {
+<<<<<<< HEAD
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => const LoginScreen()),
+=======
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()),
+>>>>>>> fde3c79f0505442e78a99d2bfe53c11089c814a3
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white, 
+                      backgroundColor: Colors.white,
                       foregroundColor: Colors.black,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 50, vertical: 20),
@@ -81,14 +87,24 @@ class IndexState extends State<Index> {
                     onPressed: () {
                       Navigator.push(
                         context,
+<<<<<<< HEAD
                         MaterialPageRoute(builder: (context) => const RegisterScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white, 
                       foregroundColor: Colors.black,
+=======
+                        MaterialPageRoute(
+                            builder: (context) => const RegisterScreen()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black,
+                      foregroundColor: Colors.white,
+>>>>>>> fde3c79f0505442e78a99d2bfe53c11089c814a3
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 50, vertical: 20),
+                          horizontal: 50, vertical: 20),
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
@@ -96,8 +112,6 @@ class IndexState extends State<Index> {
                       ),
                     ),
                     child: const Text('REGISTER'),
-                    
-                    
                   ),
                 ),
               ],
