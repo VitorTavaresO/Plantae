@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plantae/loginScreen.dart';
 import 'package:plantae/registerScreen.dart';
 import 'package:plantae/loadScreen.dart';
-import 'package:plantae/placesListScreen.dart';
+import 'package:plantae/home.dart';
 import 'index.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Plantae',
       theme: ThemeData(primarySwatch: Colors.brown),
-      home: Index(),
+      home: Home(),
     );
   }
 }
