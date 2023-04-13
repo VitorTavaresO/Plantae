@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  _RegisterScreenState createState() => _RegisterScreenState();
+  _LoginScreen createState() => _LoginScreen();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _LoginScreen extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -24,7 +24,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(24, 174, 0, 1),
-        title: const Text('REGISTER'),
+        title: const Text('LOGIN'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -88,8 +88,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black, 
-                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.white, 
+                      foregroundColor: Colors.black,
                       padding: const EdgeInsets.symmetric(
                         horizontal: 50, vertical: 20),
                       shape: const RoundedRectangleBorder(
@@ -98,7 +98,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                     ),
-                child: const Text('REGISTER'),
+                child: const Text('LOGIN'),
               ),
             ],
           ),
