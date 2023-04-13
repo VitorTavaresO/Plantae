@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plantae/loginScreen.dart';
+import 'package:plantae/registerScreen.dart';
 
 class Index extends StatefulWidget {
   const Index({super.key});
@@ -47,7 +48,6 @@ class IndexState extends State<Index> {
                 ),
               ),
             ),
-            
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -55,13 +55,14 @@ class IndexState extends State<Index> {
                   padding: const EdgeInsets.only(top: 100),
                   child: ElevatedButton(
                     onPressed: () {
-                        Navigator.push(
+                      Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const LoginScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white, 
+                      backgroundColor: Colors.white,
                       foregroundColor: Colors.black,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 50, vertical: 20),
@@ -78,13 +79,17 @@ class IndexState extends State<Index> {
                   padding: const EdgeInsets.only(top: 100),
                   child: ElevatedButton(
                     onPressed: () {
-
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RegisterScreen()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black, 
+                      backgroundColor: Colors.black,
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 50, vertical: 20),
+                          horizontal: 50, vertical: 20),
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
@@ -92,8 +97,6 @@ class IndexState extends State<Index> {
                       ),
                     ),
                     child: const Text('REGISTER'),
-                    
-                    
                   ),
                 ),
               ],
