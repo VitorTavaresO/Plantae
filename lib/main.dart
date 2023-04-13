@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantae/loginScreen.dart';
 import 'package:plantae/registerScreen.dart';
-import 'loadScreen.dart';
+import 'package:plantae/loadScreen.dart';
 import 'index.dart';
 
 void main() {
