@@ -23,7 +23,7 @@ class _LoginScreen extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24, 174, 0, 1),
+        backgroundColor: const Color.fromRGBO(0, 173, 132, 1),
         title: const Text('LOGIN'),
       ),
       body: Padding(
@@ -88,16 +88,16 @@ class _LoginScreen extends State<LoginScreen> {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white, 
-                      foregroundColor: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 50, vertical: 20),
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
+                  backgroundColor: Colors.white,
+                  foregroundColor: Colors.black,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
                     ),
+                  ),
+                ),
                 child: const Text('LOGIN'),
               ),
             ],
