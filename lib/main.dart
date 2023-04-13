@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plantae/registerScreen.dart';
 import 'loadscreen.dart';
 import 'index.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Plantae',
       theme: ThemeData(primarySwatch: Colors.green),
-      home: Index(),
+      home: Index(), //Para testar cada tela, troque o valor de home para a o nome da tela desejada
     );
   }
 }
