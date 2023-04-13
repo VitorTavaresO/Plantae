@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plantae/loginScreen.dart';
+import 'package:plantae/registerScreen.dart';
 
 class Index extends StatefulWidget {
   const Index({super.key});
@@ -56,8 +57,8 @@ class IndexState extends State<Index> {
                   child: ElevatedButton(
                     onPressed: () {
                         Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const LoginScreen()),
+                          context,
+                          MaterialPageRoute(builder: (context) => const LoginScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -78,11 +79,14 @@ class IndexState extends State<Index> {
                   padding: const EdgeInsets.only(top: 100),
                   child: ElevatedButton(
                     onPressed: () {
-
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const RegisterScreen()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black, 
-                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.white, 
+                      foregroundColor: Colors.black,
                       padding: const EdgeInsets.symmetric(
                         horizontal: 50, vertical: 20),
                       shape: const RoundedRectangleBorder(

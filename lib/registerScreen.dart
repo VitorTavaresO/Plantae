@@ -9,8 +9,11 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
+  final _dataNascimento = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
   bool _obscureText = true;
   @override
   void dispose() {
@@ -37,6 +40,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 'assets/images/user.png',
                 height: 200,
                 width: 200,
+              ),
+              const SizedBox(height: 16.0),
+              TextFormField(
+                controller: _nameController,
+                decoration: const InputDecoration(
+                  labelText: 'NAME',
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your name.';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 16.0),
+              TextFormField(
+                controller: _dataNascimento,
+                decoration: const InputDecoration(
+                  labelText: 'DATA DE NASCIMENTO',
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your data de nascimento.';
+                  }
+                  return null;
+                },
               ),
               const SizedBox(height: 16.0),
               TextFormField(
