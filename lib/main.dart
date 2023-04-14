@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Plantae',
       theme: ThemeData(primarySwatch: Colors.brown),
-      home: Home(),
+      home: Index(),
     );
   }
 }

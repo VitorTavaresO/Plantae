@@ -29,7 +29,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24, 174, 0, 1),
+        backgroundColor: const Color.fromRGBO(0, 173, 132, 1),
         title: const Text('REGISTER'),
       ),
       body: Padding(
@@ -57,20 +57,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   return null;
                 },
               ),
+              
               const SizedBox(height: 16.0),
               TextFormField(
-                controller: _nameController,
+                controller: _dateBirthController,
                 decoration: const InputDecoration(
                   labelText: 'DATE OF BIRTH',
+                  hintText: 'Enter your date of birth',
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your name.';
+                    return 'Please enter your date of birth.';
                   }
                   return null;
                 },
               ),
-              const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () async{
                   final DateTime? pickedDate = await showDatePicker(

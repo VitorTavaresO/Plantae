@@ -50,11 +50,11 @@ class HomeState extends State<Home> {
         selectedItemColor: Color.fromARGB(255, 65, 65, 64),
         onTap: _onItemTapped,
       ),
-      body: Center(
+      body: const Center(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
-            children: const <Widget>[
+            children: <Widget>[
               SizedBox(
                 height: 100,
                 width: 500,
