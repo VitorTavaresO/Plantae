@@ -70,7 +70,7 @@ class IndexState extends State<Index> {
                         ),
                       ),
                     ),
-                    child: const Text('LOG IN'),
+                    child: const Text('LOG IN '),
                   ),
                 ),
                 Padding(
@@ -86,7 +86,7 @@ class IndexState extends State<Index> {
                       backgroundColor: Colors.white, 
                       foregroundColor: Colors.black,
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
+                          horizontal: 40, vertical: 20),
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
