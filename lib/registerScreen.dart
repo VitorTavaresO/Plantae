@@ -10,7 +10,7 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
-  final _dataNascimento = TextEditingController();
+  final _dateBirthController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
@@ -18,6 +18,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   void dispose() {
     _nameController.dispose();
+    _dateBirthController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
@@ -58,17 +59,33 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               const SizedBox(height: 16.0),
               TextFormField(
-                controller: _dataNascimento,
+                controller: _nameController,
                 decoration: const InputDecoration(
-                  labelText: 'DATA DE NASCIMENTO',
+                  labelText: 'DATE OF BIRTH',
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your data de nascimento.';
+                    return 'Please enter your name.';
                   }
                   return null;
                 },
               ),
+              const SizedBox(height: 16.0),
+              ElevatedButton(
+                onPressed: () async{
+                  final DateTime? pickedDate = await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1900),
+                    lastDate: DateTime(2100),
+                  );
+                  if (pickedDate != null) {
+                    _dateBirthController.text = pickedDate.toString();
+                  }
+                },
+                child: const Text('Select Date'),
+                  ),
+              
               const SizedBox(height: 16.0),
               TextFormField(
                 controller: _emailController,
@@ -135,9 +152,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     // printa no terminal as informações digitadas
+                    String name = _nameController.text;
+                    String dateBirth = _dateBirthController.text;
                     String email = _emailController.text;
                     String password = _passwordController.text;
-
+                    print('Name: $name');
+                    print('Date of Birth: $dateBirth');
                     print('Email: $email');
                     print('Password: $password');
                   }
