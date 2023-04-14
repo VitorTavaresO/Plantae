@@ -13,7 +13,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _dateBirthController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _confirmPasswordController = TextEditingController();
+  final _confirmPassword = TextEditingController();
   bool _obscureText = true;
   @override
   void dispose() {
@@ -21,7 +21,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _dateBirthController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    _confirmPasswordController.dispose();
+    _confirmPassword.dispose();
     super.dispose();
   }
 
@@ -63,7 +63,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 controller: _dateBirthController,
                 decoration: const InputDecoration(
                   labelText: 'DATE OF BIRTH',
-                  hintText: 'Enter your date of birth',
+                  hintText: 'dd/mm/yyyy',
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -126,7 +126,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               const SizedBox(height: 16.0),
               TextFormField(
-                controller: _passwordController,
+                controller: _confirmPassword,
                 decoration: InputDecoration(
                   labelText: ' CONFIRM PASSWORD',
                   suffixIcon: IconButton(
@@ -144,6 +144,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please confirm your password.';
+                  }
+                  if (value != _passwordController.text) {
+                    return 'Passwords do not match.';
                   }
                   return null;
                 },
