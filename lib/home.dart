@@ -53,15 +53,6 @@ class HomeState extends State<Home> {
       body: const Center(
         child: Padding(
           padding: EdgeInsets.all(16.0),
-          child: Column(
-            children: <Widget>[
-              SizedBox(
-                height: 100,
-                width: 500,
-                child: Card(),
-              )
-            ],
-          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
