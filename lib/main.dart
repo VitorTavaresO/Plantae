@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Plantae',
-      theme: ThemeData(primarySwatch: Colors.brown),
-      home: Index(),
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
+      home: Home(),
     );
   }
 }

@@ -47,12 +47,43 @@ class HomeState extends State<Home> {
           ),
         ],
         currentIndex: currentPageIndex,
-        selectedItemColor: Color.fromARGB(255, 65, 65, 64),
+        selectedItemColor: const Color.fromARGB(255, 65, 65, 64),
         onTap: _onItemTapped,
       ),
-      body: const Center(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
+      body: Card(
+        clipBehavior: Clip.antiAlias,
+        child: Column(
+          children: [
+            ListTile(
+              leading: const Icon(Icons.arrow_drop_down_circle),
+              title: const Text('Card title 1'),
+              subtitle: Text(
+                'Secondary Text',
+                style: TextStyle(color: Colors.black.withOpacity(0.6)),
+              ),
+            ),
+            ButtonBar(
+              alignment: MainAxisAlignment.start,
+              children: [
+                TextButton(
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(0, 173, 132, 1)),
+                  ),
+                  onPressed: null,
+                  child: const Text('ACTION 1'),
+                ),
+                TextButton(
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(0, 173, 132, 1)),
+                  ),
+                  onPressed: null,
+                  child: const Text('ACTION 2'),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
