@@ -51,11 +51,12 @@ class HomeState extends State<Home> {
         onTap: _onItemTapped,
       ),
       body: Card(
+        elevation: 10,
         clipBehavior: Clip.antiAlias,
         child: Column(
           children: [
             ListTile(
-              leading: const Icon(Icons.arrow_drop_down_circle),
+              leading: const Icon(Icons.yard),
               title: const Text('Card title 1'),
               subtitle: Text(
                 'Secondary Text',
