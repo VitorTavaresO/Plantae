@@ -1,5 +1,5 @@
+import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:plantae/loginScreen.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -16,7 +16,8 @@ class ElevatedCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Card(
-        elevation: 5,
+        elevation: 2,
+        color: Color.fromARGB(1, 219, 219, 219),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -30,8 +31,8 @@ class ElevatedCard extends StatelessWidget {
                       fit: BoxFit.cover),
                 ),
               ),
-              title: const Text('Casa'),
-              subtitle: const Text('Plantas: 5🪴'),
+              title: const Text('Home'),
+              subtitle: const Text('Plants: 5🪴'),
             ),
           ],
         ),
@@ -55,6 +56,57 @@ class HomeState extends State<Home> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(0, 173, 132, 1),
         title: const Text('PLACES'),
+      ),
+      body: Column(
+        children: const <Widget>[
+          ElevatedCard(),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  scrollable: true,
+                  title: const Text('Add New Place'),
+                  content: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Form(
+                      child: Column(
+                        children: <Widget>[
+                          TextFormField(
+                            decoration: const InputDecoration(
+                              labelText: 'Name',
+                              icon: Icon(Icons.home),
+                            ),
+                          ),
+                          ElevatedButton(
+                            child: const Text('UPLOAD PHOTO'),
+                            onPressed: () async {
+                              var picked = await ImagePicker()
+                                  .pickImage(source: ImageSource.gallery);
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  actions: [
+                    ElevatedButton(
+                      onPressed: null,
+                      child: Icon(Icons.add),
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Color.fromRGBO(0, 173, 132, 1)),
+                      ),
+                    ),
+                  ],
+                );
+              });
+        },
+        backgroundColor: const Color.fromRGBO(0, 173, 132, 1),
+        child: const Icon(Icons.add_home),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -82,18 +134,6 @@ class HomeState extends State<Home> {
         currentIndex: currentPageIndex,
         selectedItemColor: const Color.fromARGB(255, 65, 65, 64),
         onTap: _onItemTapped,
-      ),
-      body: Column(
-        children: const <Widget>[
-          ElevatedCard(),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
-        backgroundColor: const Color.fromRGBO(0, 173, 132, 1),
-        child: const Icon(Icons.add_home),
       ),
     );
   }
