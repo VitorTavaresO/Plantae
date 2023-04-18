@@ -16,25 +16,35 @@ class ElevatedCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Card(
-        elevation: 2,
-        color: Color.fromARGB(1, 219, 219, 219),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            ListTile(
-              leading: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: SizedBox(
-                  width: 100,
-                  child: Image.network(
-                      'https://www.thespruce.com/thmb/VWAkB4fMGLfnuF-05zP5X-m3InM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/home-improvement-smart-ways-to-update-your-front-yard-2736970-hero-12e970406e734b45930d3f80a9783001.jpg',
-                      fit: BoxFit.cover),
+        elevation: 50,
+        shape: const RoundedRectangleBorder(
+          side: BorderSide(
+            color: Color.fromARGB(255, 144, 148, 147),
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+        ),
+        child: SizedBox(
+          height: 100,
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                  leading: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: SizedBox(
+                      width: 100,
+                      child: Image.network(
+                          'https://www.thespruce.com/thmb/VWAkB4fMGLfnuF-05zP5X-m3InM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/home-improvement-smart-ways-to-update-your-front-yard-2736970-hero-12e970406e734b45930d3f80a9783001.jpg',
+                          fit: BoxFit.cover),
+                    ),
+                  ),
+                  title: const Text('Home'),
+                  subtitle: const Text('Plants: 5🪴'),
                 ),
-              ),
-              title: const Text('Home'),
-              subtitle: const Text('Plants: 5🪴'),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -59,7 +69,10 @@ class HomeState extends State<Home> {
       ),
       body: Column(
         children: const <Widget>[
+          Spacer(),
           ElevatedCard(),
+          ElevatedCard(),
+          Spacer(),
         ],
       ),
       floatingActionButton: FloatingActionButton(
