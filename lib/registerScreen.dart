@@ -158,10 +158,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const LoginScreen()),
-                      );
+                 
                   if (_formKey.currentState!.validate()) {
                     // printa no terminal as informações digitadas
                     String name = _nameController.text;
@@ -173,6 +170,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     print('Email: $email');
                     print('Password: $password');
                   }
+                   Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LoginScreen()),
+                      );
                 },
                 style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white, 

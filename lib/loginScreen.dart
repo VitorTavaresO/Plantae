@@ -80,10 +80,7 @@ class _LoginScreen extends State<LoginScreen> {
               const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const Home()),
-                      );
+                  
                   if (_formKey.currentState!.validate()) {
                     // printa no terminal as informações digitadas
                     String email = _emailController.text;
@@ -92,6 +89,10 @@ class _LoginScreen extends State<LoginScreen> {
                     print('Email: $email');
                     print('Password: $password');
                   }
+                  Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Home()),
+                      );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
