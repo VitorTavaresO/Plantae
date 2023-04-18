@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:plantae/loginScreen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -28,6 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(0, 173, 132, 1),
         title: const Text('REGISTER'),
@@ -81,7 +84,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     lastDate: DateTime(2100),
                   );
                   if (pickedDate != null) {
-                    _dateBirthController.text = pickedDate.toString();
+                      final formattedDate = DateFormat('dd-MM-yyyy').format(pickedDate);
+                    _dateBirthController.text = formattedDate;
                   }
                 },
                 child: const Text('Select Date'),
@@ -154,6 +158,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {
+                 
                   if (_formKey.currentState!.validate()) {
                     // printa no terminal as informações digitadas
                     String name = _nameController.text;
@@ -165,6 +170,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     print('Email: $email');
                     print('Password: $password');
                   }
+                   Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LoginScreen()),
+                      );
                 },
                 style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white, 

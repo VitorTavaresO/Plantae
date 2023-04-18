@@ -8,6 +8,38 @@ class Home extends StatefulWidget {
   HomeState createState() => HomeState();
 }
 
+class ElevatedCard extends StatelessWidget {
+  const ElevatedCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Card(
+        elevation: 5,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            ListTile(
+              leading: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: SizedBox(
+                  width: 100,
+                  child: Image.network(
+                      'https://www.thespruce.com/thmb/VWAkB4fMGLfnuF-05zP5X-m3InM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/home-improvement-smart-ways-to-update-your-front-yard-2736970-hero-12e970406e734b45930d3f80a9783001.jpg',
+                      fit: BoxFit.cover),
+                ),
+              ),
+              title: const Text('Casa'),
+              subtitle: const Text('Plantas: 5🪴'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class HomeState extends State<Home> {
   int currentPageIndex = 0;
   void _onItemTapped(int index) {
@@ -19,6 +51,7 @@ class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(0, 173, 132, 1),
         title: const Text('PLACES'),
@@ -50,42 +83,10 @@ class HomeState extends State<Home> {
         selectedItemColor: const Color.fromARGB(255, 65, 65, 64),
         onTap: _onItemTapped,
       ),
-      body: Card(
-        elevation: 10,
-        clipBehavior: Clip.antiAlias,
-        child: Column(
-          children: [
-            ListTile(
-              leading: const Icon(Icons.yard),
-              title: const Text('Card title 1'),
-              subtitle: Text(
-                'Secondary Text',
-                style: TextStyle(color: Colors.black.withOpacity(0.6)),
-              ),
-            ),
-            ButtonBar(
-              alignment: MainAxisAlignment.start,
-              children: [
-                TextButton(
-                  style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all<Color>(
-                        const Color.fromRGBO(0, 173, 132, 1)),
-                  ),
-                  onPressed: null,
-                  child: const Text('ACTION 1'),
-                ),
-                TextButton(
-                  style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all<Color>(
-                        const Color.fromRGBO(0, 173, 132, 1)),
-                  ),
-                  onPressed: null,
-                  child: const Text('ACTION 2'),
-                ),
-              ],
-            ),
-          ],
-        ),
+      body: Column(
+        children: const <Widget>[
+          ElevatedCard(),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
