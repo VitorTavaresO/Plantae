@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plantae/home.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -22,6 +23,7 @@ class _LoginScreen extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(0, 173, 132, 1),
         title: const Text('LOGIN'),
@@ -78,6 +80,10 @@ class _LoginScreen extends State<LoginScreen> {
               const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {
+                  Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Home()),
+                      );
                   if (_formKey.currentState!.validate()) {
                     // printa no terminal as informações digitadas
                     String email = _emailController.text;

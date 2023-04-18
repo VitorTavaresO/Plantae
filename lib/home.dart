@@ -19,6 +19,7 @@ class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(0, 173, 132, 1),
         title: const Text('PLACES'),
