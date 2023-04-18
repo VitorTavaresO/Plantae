@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -81,7 +82,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     lastDate: DateTime(2100),
                   );
                   if (pickedDate != null) {
-                    _dateBirthController.text = pickedDate.toString();
+                      final formattedDate = DateFormat('dd-MM-yyyy').format(pickedDate);
+                    _dateBirthController.text = formattedDate;
                   }
                 },
                 child: const Text('Select Date'),
