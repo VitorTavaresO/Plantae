@@ -1,4 +1,4 @@
-# PLANTAE APP
+# PLANTAE
 
 ## Introduction
 
