@@ -9,6 +9,7 @@
  🇺🇸
  🇧🇷
  🇪🇸
+
 ## Functions
  - The Plantae software has the following features:
  - Register and manage user registration;
