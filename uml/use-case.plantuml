@@ -1,0 +1,20 @@
+@startuml Plantae
+left to right direction
+:Usuário:
+rectangle Sistema{
+(Manter Usuário)
+(Manter Lugar)
+(Manter Planta)
+(Receber Alerta) ..> (Alerta Necessidade de Água) : extends
+(Receber Alerta) ..> (Alerta Necessidade de Sol) : extends
+(Receber Alerta) ..> (Alerta Necessidade de Atenção) : extends
+(Emitir Relatório) ..> (Relatório Geral) : extends
+(Emitir Relatório) ..> (Relatório de Plantas) : extends
+(Emitir Relatório) ..> (Relatório de Lugares) : extends
+}
+Usuário -- (Manter Usuário)
+Usuário -- (Manter Lugar)
+Usuário -- (Manter Planta)
+Usuário -- (Receber Alerta)
+Usuário -- (Emitir Relatório)
+@enduml

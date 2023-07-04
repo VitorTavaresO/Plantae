@@ -1,7 +1,9 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:plantae/loginScreen.dart';
-
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -9,8 +11,8 @@ class RegisterScreen extends StatefulWidget {
   @override
   _RegisterScreenState createState() => _RegisterScreenState();
 }
-enum ImageSourceType {gallery, camera}
 
+enum ImageSourceType { gallery, camera }
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
@@ -31,11 +33,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset : false,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(0, 173, 132, 1),
         title: const Text('REGISTER'),
@@ -47,13 +48,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              
               Image.asset(
                 'assets/images/user.png',
                 height: 200,
                 width: 200,
               ),
-                
               const SizedBox(height: 16.0),
               TextFormField(
                 controller: _nameController,
@@ -67,7 +66,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   return null;
                 },
               ),
-              
               const SizedBox(height: 16.0),
               TextFormField(
                 controller: _dateBirthController,
@@ -83,7 +81,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 },
               ),
               ElevatedButton(
-                onPressed: () async{
+                onPressed: () async {
                   final DateTime? pickedDate = await showDatePicker(
                     context: context,
                     initialDate: DateTime.now(),
@@ -91,13 +89,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     lastDate: DateTime(2100),
                   );
                   if (pickedDate != null) {
-                      final formattedDate = DateFormat('dd-MM-yyyy').format(pickedDate);
+                    final formattedDate =
+                        DateFormat('dd-MM-yyyy').format(pickedDate);
                     _dateBirthController.text = formattedDate;
                   }
                 },
                 child: const Text('Select Date'),
-                  ),
-              
+              ),
               const SizedBox(height: 16.0),
               TextFormField(
                 controller: _emailController,
@@ -163,10 +161,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 },
               ),
               const SizedBox(height: 16.0),
-              
               ElevatedButton(
                 onPressed: () {
-                 
                   if (_formKey.currentState!.validate()) {
                     // printa no terminal as informações digitadas
                     String name = _nameController.text;
@@ -178,23 +174,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     print('Email: $email');
                     print('Password: $password');
                   }
-                   Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const LoginScreen()),
-                      );
-                      
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoginScreen()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white, 
-                      foregroundColor: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 50, vertical: 20),
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
+                  backgroundColor: Colors.white,
+                  foregroundColor: Colors.black,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
                     ),
+                  ),
+                ),
                 child: const Text('REGISTER'),
               ),
             ],
@@ -204,7 +200,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 }
-
 
 class ImageFromGalleryEx extends StatefulWidget {
   final type;
@@ -236,7 +231,7 @@ class ImageFromGalleryExState extends State<ImageFromGalleryEx> {
               : "Image from Gallery")),
       body: Column(
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 52,
           ),
           Center(
@@ -246,26 +241,24 @@ class ImageFromGalleryExState extends State<ImageFromGalleryEx> {
                     ? ImageSource.camera
                     : ImageSource.gallery;
                 XFile image = await imagePicker.pickImage(
-                    source: source, imageQuality: 50, preferredCameraDevice: CameraDevice.front);
-                setState(() {
-                  _image = File(image.path);
-                });
+                    source: source,
+                    imageQuality: 50,
+                    preferredCameraDevice: CameraDevice.front);
+                setState(() {});
               },
               child: Container(
                 width: 200,
                 height: 200,
-                decoration: BoxDecoration(
-                    color: Colors.red[200]),
+                decoration: BoxDecoration(color: Colors.red[200]),
                 child: _image != null
                     ? Image.file(
-                          _image,
-                          width: 200.0,
-                          height: 200.0,
-                          fit: BoxFit.fitHeight,
-                        )
+                        _image,
+                        width: 200.0,
+                        height: 200.0,
+                        fit: BoxFit.fitHeight,
+                      )
                     : Container(
-                        decoration: BoxDecoration(
-                            color: Colors.red[200]),
+                        decoration: BoxDecoration(color: Colors.red[200]),
                         width: 200,
                         height: 200,
                         child: Icon(
