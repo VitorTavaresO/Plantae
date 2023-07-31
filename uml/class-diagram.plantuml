@@ -1,0 +1,46 @@
+@startuml class-diagram
+left to right direction
+
+class User{
+    String user
+    Date birthday
+    String email
+    String password
+    numberOfPlaces()
+}
+
+class Place{
+    String name
+    String geocode
+    Int temperature
+    Int humidity
+    User user
+    numberOfPlants()
+}
+
+class Specie{
+    String name
+    Int waterFrequency
+    Int sunBathFrequency
+    Int attentionFrequency
+    String description
+}
+
+class Plant{
+    File photo
+    String name
+    Date dataOfCreation
+    Datetime lastWatering
+    Datetime lastSunBath
+    Datetime lastAttention
+    Place place
+    Specie species
+    notificationWatering()
+    notificationSunBath()
+    notificationAttention()
+    notificationBirthday()
+}
+
+User "1" -- "1..*" Place
+Place "1" -- "1..*" Plant
+Plant "1..*" -- "1" Specie
