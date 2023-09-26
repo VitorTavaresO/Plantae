@@ -201,10 +201,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
 class ImageFromGalleryEx extends StatefulWidget {
   final type;
-  ImageFromGalleryEx(this.type);
+  const ImageFromGalleryEx(this.type, {super.key});
 
   @override
-  ImageFromGalleryExState createState() => ImageFromGalleryExState(this.type);
+  ImageFromGalleryExState createState() => ImageFromGalleryExState(type);
 }
 
 class ImageFromGalleryExState extends State<ImageFromGalleryEx> {
@@ -217,7 +217,7 @@ class ImageFromGalleryExState extends State<ImageFromGalleryEx> {
   @override
   void initState() {
     super.initState();
-    imagePicker = new ImagePicker();
+    imagePicker = ImagePicker();
   }
 
   @override
