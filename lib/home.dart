@@ -125,27 +125,27 @@ class HomeState extends State<Home> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: '',
             backgroundColor: Color.fromRGBO(0, 173, 132, 1),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.yard),
-            label: 'Plants',
+            label: '',
             backgroundColor: Color.fromRGBO(0, 173, 132, 1),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
-            label: 'Profile',
+            label: '',
             backgroundColor: Color.fromRGBO(0, 173, 132, 1),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
+            label: '',
             backgroundColor: Color.fromRGBO(0, 173, 132, 1),
           ),
         ],
         currentIndex: currentPageIndex,
-        selectedItemColor: const Color.fromRGBO(255, 65, 65, 64),
+        selectedItemColor: Color.fromARGB(255, 0, 80, 61),
         onTap: _onItemTapped,
       ),
     );
