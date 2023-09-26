@@ -39,7 +39,7 @@ class IndexState extends State<Index> {
             const Padding(
               padding: EdgeInsets.only(top: 20),
               child: Text(
-                'PLANTAE',
+                'PLANTAE_TESTES',
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,

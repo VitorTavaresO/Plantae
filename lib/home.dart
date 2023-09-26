@@ -67,8 +67,8 @@ class HomeState extends State<Home> {
         backgroundColor: const Color.fromRGBO(0, 173, 132, 1),
         title: const Text('PLACES'),
       ),
-      body: Column(
-        children: const <Widget>[
+      body: const Column(
+        children: <Widget>[
           Spacer(),
           ElevatedCard(),
           ElevatedCard(),
@@ -97,8 +97,8 @@ class HomeState extends State<Home> {
                           ElevatedButton(
                             child: const Text('UPLOAD PHOTO'),
                             onPressed: () async {
-                              var picked = await ImagePicker()
-                                  .pickImage(source: ImageSource.gallery);
+                           //   var picked = await ImagePicker()
+                              //    .pickImage(source: ImageSource.gallery);
                             },
                           ),
                         ],
@@ -108,11 +108,11 @@ class HomeState extends State<Home> {
                   actions: [
                     ElevatedButton(
                       onPressed: null,
-                      child: Icon(Icons.add),
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromRGBO(0, 173, 132, 1)),
+                            const Color.fromRGBO(0, 173, 132, 1)),
                       ),
+                      child: const Icon(Icons.add),
                     ),
                   ],
                 );
@@ -145,7 +145,7 @@ class HomeState extends State<Home> {
           ),
         ],
         currentIndex: currentPageIndex,
-        selectedItemColor: const Color.fromARGB(255, 65, 65, 64),
+        selectedItemColor: const Color.fromRGBO(255, 65, 65, 64),
         onTap: _onItemTapped,
       ),
     );

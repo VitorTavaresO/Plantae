@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:plantae/loginScreen.dart';
-import 'package:plantae/registerScreen.dart';
-import 'package:plantae/loadScreen.dart';
-import 'package:plantae/home.dart';
 import 'index.dart';
 
 void main() {
@@ -16,9 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Plantae',
+      title: 'Plantae_Testes',
       theme: ThemeData(primarySwatch: Colors.blueGrey),
-      home: Index(),
+      home: const Index(),
     );
   }
 }

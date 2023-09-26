@@ -208,10 +208,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
 class ImageFromGalleryEx extends StatefulWidget {
   final type;
-  ImageFromGalleryEx(this.type);
+  const ImageFromGalleryEx(this.type, {super.key});
 
   @override
-  ImageFromGalleryExState createState() => ImageFromGalleryExState(this.type);
+  ImageFromGalleryExState createState() => ImageFromGalleryExState(type);
 }
 
 class ImageFromGalleryExState extends State<ImageFromGalleryEx> {
@@ -224,7 +224,7 @@ class ImageFromGalleryExState extends State<ImageFromGalleryEx> {
   @override
   void initState() {
     super.initState();
-    imagePicker = new ImagePicker();
+  //  imagePicker = ImagePicker();
   }
 
   @override
@@ -236,12 +236,12 @@ class ImageFromGalleryExState extends State<ImageFromGalleryEx> {
               : "Image from Gallery")),
       body: Column(
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 52,
           ),
           Center(
             child: GestureDetector(
-              onTap: () async {
+             /* onTap: () async {
                 var source = type == ImageSourceType.camera
                     ? ImageSource.camera
                     : ImageSource.gallery;
@@ -250,7 +250,7 @@ class ImageFromGalleryExState extends State<ImageFromGalleryEx> {
                 setState(() {
                   _image = File(image.path);
                 });
-              },
+              },*/
               child: Container(
                 width: 200,
                 height: 200,
