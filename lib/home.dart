@@ -67,8 +67,8 @@ class HomeState extends State<Home> {
         backgroundColor: const Color.fromRGBO(0, 173, 132, 1),
         title: const Text('PLACES'),
       ),
-      body: Column(
-        children: const <Widget>[
+      body: const Column(
+        children: <Widget>[
           Spacer(),
           ElevatedCard(),
           ElevatedCard(),
@@ -108,11 +108,11 @@ class HomeState extends State<Home> {
                   actions: [
                     ElevatedButton(
                       onPressed: null,
-                      child: Icon(Icons.add),
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromRGBO(0, 173, 132, 1)),
+                            const Color.fromRGBO(0, 173, 132, 1)),
                       ),
+                      child: const Icon(Icons.add),
                     ),
                   ],
                 );
