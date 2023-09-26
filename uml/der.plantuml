@@ -1,0 +1,48 @@
+@startuml der
+left to right direction
+
+entity User {
+  * user_id : int <<generated>>
+  --
+  * username : string
+  * birthday : date
+  * email : string
+  * password : string
+  }
+
+entity Place{
+    * place_id : int <<generated>>
+    --
+    * name : string
+    * geocode: string
+    * temperature: int
+    * humidity: int
+    * User: int <<FK>>
+    }
+
+entity Plant{
+    * plant_id : int <<generated>>
+    --
+    * photo : string
+    * name : string
+    * dataOfCreation : date
+    * lastWatering : datetime
+    * lastSunBath : datetime
+    * lastAttention: datetime
+    * Place: int <<FK>>
+    * Species: int <<FK>>
+    }
+
+entity Species{
+    * species_id : int <<generated>>
+    --
+    * name : string
+    * waterFrequency : int
+    * sunFrequency : int
+    * attentionFrequency : int
+    * description: string
+    }
+
+User "1" -- "1..*" Place
+Place "1" -- "1..*" Plant
+Plant "1..*" -- "1" Species

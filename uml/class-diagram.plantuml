@@ -27,7 +27,7 @@ class Specie{
 }
 
 class Plant{
-    File photo
+    String photo
     String name
     Date dataOfCreation
     Datetime lastWatering
